@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+    <div fxHide.gt-xs>
+        <button mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+    <div>
+        <button mat-button [routerLink]="'/home'">
+            <mat-icon>school</mat-icon>
+            <h1 class="logo-caption">Jalp</h1>
+        </button>
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="center" fxHide.xs>
+        <ul fxLayout class="navigation-items">
+            <li>
+                <button mat-button [routerLink]="'/vocables'">Vocable List</button>
+            </li>
+            <li>
+                <button mat-button [routerLink]="'/tests'">Tests and Quizzes</button>
+            </li>
+            <li>
+                <button mat-button [routerLink]="'/cheatsheets'">Cheat Sheets</button>
+            </li>
+            <li>
+                <button mat-button [routerLink]="'/plans'">Training Plans</button>
+            </li>
+        </ul>
+    </div>
