@@ -61,10 +61,3 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
-
-// Added polyfill to support TS 3.7.
-// See https://github.com/angular/angular-cli/issues/16071
-// TODO: Verify if still necessary
-(window as any).__importDefault = function(mod) {
-  return mod && mod.__esModule ? mod : { default: mod };
-};
