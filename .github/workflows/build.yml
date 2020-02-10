@@ -31,6 +31,11 @@ jobs:
     - name: run unit tests
       run: |
         npm run test:ci
+    - name: update code coverage report
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        path-to-lcov: "./coverage/jalp-ui/lcov.info"
     - name: prepare e2e - install latest stable google chrome
       run: |
         sudo apt-get update
