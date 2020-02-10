@@ -31,6 +31,10 @@ jobs:
     - name: run unit tests
       run: |
         npm run test:ci
+    - name: prepare e2e - install latest stable google chrome
+      run: |
+        sudo apt-get update
+        sudo apt-get install libsqlite3-dev chromium-driver google-chrome-stable
     - name: run e2e tests
       run: |
         npm run e2e:ci
