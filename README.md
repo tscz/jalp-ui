@@ -1,3 +1,7 @@
+
+[![Build Status](https://github.com/tscz/jalp-ui/workflows/Build%20Application/badge.svg)](https://github.com/tscz/jalp-ui/actions?query=workflow%3A%22Build+Application%22)
+[![Coverage Status](https://coveralls.io/repos/github/tscz/jalp-ui/badge.svg?branch=master)](https://coveralls.io/github/tscz/jalp-ui?branch=master)
+
 # JalpUi
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.1.
