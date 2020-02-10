@@ -23,14 +23,12 @@ describe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-    it(`should have as title 'jalp-ui'`, () => {
-    const fixture = TestBed.createComponent(HomeComponent);
+  it(`should have as title 'jalp-ui'`, () => {
     const app = fixture.componentInstance;
     expect(app.title).toEqual('jalp-ui');
   });
 
   it('should render title', () => {
-    const fixture = TestBed.createComponent(HomeComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('#content').textContent).toContain('jalp-ui app is running!');

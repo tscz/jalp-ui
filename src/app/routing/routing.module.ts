@@ -8,11 +8,11 @@ import { CheatsheetsComponent } from '../cheatsheets/cheatsheets.component';
 import { PlansComponent } from '../plans/plans.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },//
-  { path: 'vocables', component: VocablesComponent },//
-  { path: 'tests', component: TestsComponent },//
-  { path: 'cheatsheets', component: CheatsheetsComponent },//
-  { path: 'plans', component: PlansComponent },//
+  { path: 'home', component: HomeComponent }, //
+  { path: 'vocables', component: VocablesComponent }, //
+  { path: 'tests', component: TestsComponent }, //
+  { path: 'cheatsheets', component: CheatsheetsComponent }, //
+  { path: 'plans', component: PlansComponent }, //
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 
