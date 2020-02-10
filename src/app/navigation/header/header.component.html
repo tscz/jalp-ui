@@ -26,3 +26,14 @@
             </li>
         </ul>
     </div>
+    <span fxFlex></span>
+    <div>
+        <button mat-icon-button [matMenuTriggerFor]="moreMenu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #moreMenu="matMenu">
+            <button mat-menu-item>Settings</button>
+            <button mat-menu-item>Help</button>
+        </mat-menu>
+    </div>
+</mat-toolbar>
