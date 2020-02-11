@@ -4,8 +4,8 @@ import { IndexcardListComponent } from '../indexcard-list/indexcard-list.compone
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'indexcards', component: IndexcardListComponent}
-]
+  { path: 'indexcards', component: IndexcardListComponent }
+];
 
 @NgModule({
   declarations: [],

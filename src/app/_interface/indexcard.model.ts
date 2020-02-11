@@ -1,6 +1,6 @@
 export interface Indexcard {
-    userid: number,
-    id: number,
-    title: string,
-    completed: boolean
+    userid: number;
+    id: number;
+    title: string;
+    completed: boolean;
 }

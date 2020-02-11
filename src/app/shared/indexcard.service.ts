@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 export class IndexcardService {
 
   constructor(private http: HttpClient) { }
- 
+
   public getData = (route: string) => {
     return this.http.get(this.createCompleteRoute(route, environment.urlAddress));
   }

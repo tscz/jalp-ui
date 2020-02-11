@@ -12,7 +12,7 @@ import { MatSort } from '@angular/material/sort';
 export class IndexcardListComponent implements OnInit, AfterViewInit {
 
 
-  public displayedColumns = ['userId', 'id', 'title', 'completed','details','update','delete'];
+  public displayedColumns = ['userId', 'id', 'title', 'completed', 'details', 'update', 'delete'];
   public dataSource = new MatTableDataSource<Indexcard>();
 
   @ViewChild(MatSort) sort: MatSort;
