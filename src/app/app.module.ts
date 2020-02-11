@@ -17,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { IndexcardModule } from './indexcard/indexcard.module';
 import { NotFoundComponent } from './error-pages/not-found/not-found.component';
 import { ServerErrorComponent } from './error-pages/server-error/server-error.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { ServerErrorComponent } from './error-pages/server-error/server-error.co
     MaterialModule,
     RoutingModule,
     HttpClientModule,
-    IndexcardModule
+    IndexcardModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
