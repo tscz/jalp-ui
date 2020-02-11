@@ -11,7 +11,8 @@
     "lint:fix": "npm run lint -- --fix=true",
     "e2e": "ng e2e",
     "e2e:ci": "npm run e2e --silent -- --protractor-config=e2e/protractor-ci.conf.js",
-    "update": "ng update"
+    "update": "ng update",
+    "deploy": "ng deploy"
   },
   "private": true,
   "dependencies": {
