@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Indexcard } from 'src/app/_interface/indexcard.model';
 import { IndexcardService } from 'src/app/shared/indexcard.service';
 import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-indexcard-list',
@@ -16,6 +17,7 @@ export class IndexcardListComponent implements OnInit, AfterViewInit {
   public dataSource = new MatTableDataSource<Indexcard>();
 
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private inexcardService: IndexcardService) { }
 
@@ -25,6 +27,7 @@ export class IndexcardListComponent implements OnInit, AfterViewInit {
 
     ngAfterViewInit(): void {
       this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
   }
 
   public getAllIndexcards = () => {
