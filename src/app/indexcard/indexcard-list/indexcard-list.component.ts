@@ -4,6 +4,7 @@ import { Indexcard } from 'src/app/_interface/indexcard.model';
 import { IndexcardService } from 'src/app/shared/indexcard.service';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
+import { ErrorHandlerService } from 'src/app/shared/error-handler.service';
 
 @Component({
   selector: 'app-indexcard-list',
@@ -19,7 +20,7 @@ export class IndexcardListComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private inexcardService: IndexcardService) { }
+  constructor(private indexcardService: IndexcardService, private errorHandlerService: ErrorHandlerService) { }
 
   ngOnInit(): void {
     this.getAllIndexcards();
@@ -31,7 +32,10 @@ export class IndexcardListComponent implements OnInit, AfterViewInit {
   }
 
   public getAllIndexcards = () => {
-    this.inexcardService.getData('todos').subscribe(res => this.dataSource.data = res as Indexcard[]);
+    this.indexcardService.getData('todos').subscribe(
+      res => { this.dataSource.data = res as Indexcard[]; },
+      error => { this.errorHandlerService.handleError(error); }
+    );
   }
 
   public redirectToDetails = (id: string) => { };

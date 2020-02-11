@@ -16,6 +16,7 @@ import { PlansComponent } from './plans/plans.component';
 import { HttpClientModule } from '@angular/common/http';
 import { IndexcardModule } from './indexcard/indexcard.module';
 import { NotFoundComponent } from './error-pages/not-found/not-found.component';
+import { ServerErrorComponent } from './error-pages/server-error/server-error.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NotFoundComponent } from './error-pages/not-found/not-found.component';
     TestsComponent,
     CheatsheetsComponent,
     PlansComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ServerErrorComponent
   ],
   imports: [
     BrowserModule,
