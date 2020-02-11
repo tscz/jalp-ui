@@ -5,6 +5,7 @@ import { MaterialModule } from 'src/app/material/material.module';
 import { IndexcardService } from 'src/app/shared/indexcard.service';
 import { of } from 'rxjs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('IndexcardListComponent', () => {
   let component: IndexcardListComponent;
@@ -21,7 +22,7 @@ describe('IndexcardListComponent', () => {
     };
 
     TestBed.configureTestingModule({
-      imports: [MaterialModule, BrowserAnimationsModule],
+      imports: [MaterialModule, BrowserAnimationsModule, RouterTestingModule],
       declarations: [IndexcardListComponent],
       providers: [ {provide: IndexcardService, useValue: indexcardServiceStub}]
     })
