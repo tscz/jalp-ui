@@ -8,7 +8,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [],
@@ -20,7 +21,9 @@ import { MatSortModule } from '@angular/material/sort';
     MatSidenavModule,
     MatToolbarModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   imports: [
     CommonModule,
@@ -31,7 +34,9 @@ import { MatSortModule } from '@angular/material/sort';
     MatSidenavModule,
     MatToolbarModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule
   ]
 })
 export class MaterialModule { }

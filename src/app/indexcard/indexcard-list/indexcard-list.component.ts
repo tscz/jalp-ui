@@ -35,5 +35,8 @@ export class IndexcardListComponent implements OnInit, AfterViewInit {
   public redirectToUpdate = (id: string) => { };
   public redirectToDelete = (id: string) => { };
 
+  public doFilter = (value: string) => {
+    this.dataSource.filter = value.trim().toLowerCase();
+  }
 
 }
