@@ -10,10 +10,11 @@ import { HomeComponent } from './home/home.component';
 import { RoutingModule } from './routing/routing.module';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
-import { VocablesComponent } from './vocables/vocables.component';
 import { TestsComponent } from './tests/tests.component';
 import { CheatsheetsComponent } from './cheatsheets/cheatsheets.component';
 import { PlansComponent } from './plans/plans.component';
+import { HttpClientModule } from '@angular/common/http';
+import { IndexcardModule } from './indexcard/indexcard.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,6 @@ import { PlansComponent } from './plans/plans.component';
     HomeComponent,
     HeaderComponent,
     SidenavListComponent,
-    VocablesComponent,
     TestsComponent,
     CheatsheetsComponent,
     PlansComponent
@@ -32,7 +32,9 @@ import { PlansComponent } from './plans/plans.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     MaterialModule,
-    RoutingModule
+    RoutingModule,
+    HttpClientModule,
+    IndexcardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

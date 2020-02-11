@@ -2,14 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from '../home/home.component';
-import { VocablesComponent } from '../vocables/vocables.component';
 import { TestsComponent } from '../tests/tests.component';
 import { CheatsheetsComponent } from '../cheatsheets/cheatsheets.component';
 import { PlansComponent } from '../plans/plans.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent }, //
-  { path: 'vocables', component: VocablesComponent }, //
+  { path: 'indexcard', loadChildren: './../indexcard/indexcard.module#IndexcardModule' }, //
   { path: 'tests', component: TestsComponent }, //
   { path: 'cheatsheets', component: CheatsheetsComponent }, //
   { path: 'plans', component: PlansComponent }, //
