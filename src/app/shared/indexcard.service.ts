@@ -14,6 +14,10 @@ export class IndexcardService {
     return this.http.get<Indexcard[]>(this.createCompleteRoute(route, environment.urlAddress));
   }
 
+  public getIndexcard = (route: string) => {
+    return this.http.get<Indexcard>(this.createCompleteRoute(route, environment.urlAddress));
+  }
+
   private createCompleteRoute = (route: string, envAddress: string) => {
     return `${envAddress}/${route}`;
   }

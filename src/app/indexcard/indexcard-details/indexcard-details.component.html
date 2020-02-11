@@ -1,0 +1,28 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+    <mat-card fxFlex="100%" fxFlex.xs="100%">
+        <mat-card-title>Details for Indexcard</mat-card-title>
+        <mat-card-content>
+            <div fxLayout="column wrap">
+                <div fxLayout="row wrap">
+                    <div fxFlex><strong>Id:</strong></div>
+                    <div fxFlex>{{indexcard?.id}}</div>
+                </div>
+                <div fxLayout="row wrap">
+                    <div fxFlex><strong>UserId:</strong></div>
+                    <div fxFlex>{{indexcard?.userId}}</div>
+                </div>
+                <div fxLayout="row wrap">
+                    <div fxFlex><strong>Title:</strong></div>
+                    <div fxFlex>{{indexcard?.title}}</div>
+                </div>
+                <div fxLayout="row wrap">
+                    <div fxFlex><strong>Completed:</strong></div>
+                    <div fxFlex>{{indexcard?.completed}}</div>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-button (click)="redirectToOverview()" color="primary">Close</button>
+        </mat-card-actions>
+    </mat-card>
+</section>
