@@ -5,6 +5,7 @@ import { HomeComponent } from '../home/home.component';
 import { TestsComponent } from '../tests/tests.component';
 import { CheatsheetsComponent } from '../cheatsheets/cheatsheets.component';
 import { PlansComponent } from '../plans/plans.component';
+import { NotFoundComponent } from '../error-pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent }, //
@@ -12,7 +13,9 @@ const routes: Routes = [
   { path: 'tests', component: TestsComponent }, //
   { path: 'cheatsheets', component: CheatsheetsComponent }, //
   { path: 'plans', component: PlansComponent }, //
-  { path: '', redirectTo: '/home', pathMatch: 'full' }
+  { path: '404', component: NotFoundComponent }, //
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, //
+  { path: '**', redirectTo: '/404', pathMatch: 'full' }
 ];
 
 @NgModule({

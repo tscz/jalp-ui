@@ -15,6 +15,7 @@ import { CheatsheetsComponent } from './cheatsheets/cheatsheets.component';
 import { PlansComponent } from './plans/plans.component';
 import { HttpClientModule } from '@angular/common/http';
 import { IndexcardModule } from './indexcard/indexcard.module';
+import { NotFoundComponent } from './error-pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { IndexcardModule } from './indexcard/indexcard.module';
     SidenavListComponent,
     TestsComponent,
     CheatsheetsComponent,
-    PlansComponent
+    PlansComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
