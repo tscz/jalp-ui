@@ -16,7 +16,7 @@ describe('IndexcardListComponent', () => {
 
   beforeEach(async(() => {
     indexcardServiceStub = {
-        getData : (route) => {
+        getIndexcards : () => {
         return of([]);
       }
     };

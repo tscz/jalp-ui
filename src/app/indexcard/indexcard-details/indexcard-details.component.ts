@@ -31,9 +31,8 @@ export class IndexcardDetailsComponent implements OnInit {
 
   private getIndexcardDetails = () => {
     const id: string = this.activeRoute.snapshot.params.id;
-    const apiUrl = `todos/${id}`;
 
-    this.indexcardService.getIndexcard(apiUrl).subscribe(
+    this.indexcardService.getIndexcard(id).subscribe(
       res => { this.indexcard = res; },
       error => { this.errorHandler.handleError(error); }
     );

@@ -33,7 +33,7 @@ export class IndexcardListComponent implements OnInit, AfterViewInit {
   }
 
   public getAllIndexcards = () => {
-    this.indexcardService.getData('todos').subscribe(
+    this.indexcardService.getIndexcards().subscribe(
       res => { this.dataSource.data = res; },
       error => { this.errorHandlerService.handleError(error); }
     );

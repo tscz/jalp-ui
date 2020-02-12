@@ -10,12 +10,12 @@ export class IndexcardService {
 
   constructor(private http: HttpClient) { }
 
-  public getData = (route: string) => {
-    return this.http.get<Indexcard[]>(this.createCompleteRoute(route, environment.urlAddress));
+  public getIndexcards = () => {
+    return this.http.get<Indexcard[]>(this.createCompleteRoute('todos', environment.urlAddress));
   }
 
-  public getIndexcard = (route: string) => {
-    return this.http.get<Indexcard>(this.createCompleteRoute(route, environment.urlAddress));
+  public getIndexcard = (id: string) => {
+    return this.http.get<Indexcard>(this.createCompleteRoute(`todos/${id}`, environment.urlAddress));
   }
 
   private createCompleteRoute = (route: string, envAddress: string) => {

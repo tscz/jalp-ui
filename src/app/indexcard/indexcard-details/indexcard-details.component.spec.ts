@@ -1,27 +1,40 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { IndexcardDetailsComponent } from './indexcard-details.component';
-import { RouterTestingModule } from '@angular/router/testing';
 import { IndexcardService } from 'src/app/shared/indexcard.service';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
+import { Indexcard } from 'src/app/_interface/indexcard.model';
+import { HttpErrorResponse } from '@angular/common/http';
+import { ErrorHandlerService } from 'src/app/shared/error-handler.service';
+import { Router, ActivatedRoute, convertToParamMap } from '@angular/router';
 
 describe('IndexcardDetailsComponent', () => {
+  const TEST_INDEXCARD: Indexcard = { id: 1, userId: 1, completed: true, title: 'This is a test' };
+
   let component: IndexcardDetailsComponent;
   let fixture: ComponentFixture<IndexcardDetailsComponent>;
-  let indexcardServiceStub: Partial<IndexcardService>;
 
+  let indexcardService: jasmine.SpyObj<IndexcardService>;
+  let errorHandler: jasmine.SpyObj<ErrorHandlerService>;
+  let router: Router;
 
   beforeEach(async(() => {
-    indexcardServiceStub = {
-        getIndexcard : (route) => {
-        return of();
-      }
-    };
+    indexcardService = jasmine.createSpyObj<IndexcardService>(['getIndexcard']);
+    errorHandler = jasmine.createSpyObj<ErrorHandlerService>(['handleError']);
+    router = jasmine.createSpyObj<Router>(['navigate']);
 
     TestBed.configureTestingModule({
-      imports: [ RouterTestingModule],
+      imports: [],
       declarations: [IndexcardDetailsComponent],
-      providers: [ {provide: IndexcardService, useValue: indexcardServiceStub}]
+      providers: [
+        { provide: IndexcardService, useValue: indexcardService },
+        { provide: ErrorHandlerService, useValue: errorHandler },
+        { provide: Router, useValue: router },
+        {
+          provide: ActivatedRoute,
+          useValue: { snapshot: { params: { id: '' + TEST_INDEXCARD.id } } }
+        }
+      ]
     })
     .compileComponents();
   }));
@@ -29,10 +42,45 @@ describe('IndexcardDetailsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(IndexcardDetailsComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should not have indexcard details after construction', () => {
+    expect(component.indexcard).toBeFalsy();
+  });
+
+  it('should have indexcard details after initialisation', () => {
+    indexcardService.getIndexcard.and.returnValue(of(TEST_INDEXCARD));
+
+    fixture.detectChanges();
+
+    expect(component.indexcard).toEqual(TEST_INDEXCARD);
+  });
+
+  it('should report an error in case service api returns an error', () => {
+    const error404 = new HttpErrorResponse({
+      error: '404 error',
+      status: 404, statusText: 'Not Found'
+    });
+    indexcardService.getIndexcard.and.returnValue(throwError(error404));
+
+    fixture.detectChanges();
+
+    expect(indexcardService.getIndexcard).toHaveBeenCalledTimes(1);
+    expect(indexcardService.getIndexcard).toHaveBeenCalledWith('1');
+    expect(component.indexcard).toBeFalsy();
+    expect(errorHandler.handleError).toHaveBeenCalledTimes(1);
+    expect(errorHandler.handleError).toHaveBeenCalledWith(error404);
+  });
+
+  it('should be able to redirect to the list of indexcards', () => {
+    component.redirectToOverview();
+
+    expect(router.navigate).toHaveBeenCalledTimes(1);
+    expect(router.navigate).toHaveBeenCalledWith(['/indexcard/indexcards']);
+  });
+
 });
