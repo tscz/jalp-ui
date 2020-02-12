@@ -7,18 +7,17 @@ import { Indexcard } from '../_interface/indexcard.model';
   providedIn: 'root'
 })
 export class IndexcardService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   public getIndexcards = () => {
     return this.http.get<Indexcard[]>(this.createCompleteRoute('todos', environment.urlAddress));
-  }
+  };
 
   public getIndexcard = (id: string) => {
     return this.http.get<Indexcard>(this.createCompleteRoute(`todos/${id}`, environment.urlAddress));
-  }
+  };
 
   private createCompleteRoute = (route: string, envAddress: string) => {
     return `${envAddress}/${route}`;
-  }
+  };
 }

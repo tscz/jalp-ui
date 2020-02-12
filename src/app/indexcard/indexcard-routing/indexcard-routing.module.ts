@@ -11,12 +11,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [],
-  exports: [
-    RouterModule
-  ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes)
-  ]
+  exports: [RouterModule],
+  imports: [CommonModule, RouterModule.forChild(routes)]
 })
-export class IndexcardRoutingModule { }
+export class IndexcardRoutingModule {}

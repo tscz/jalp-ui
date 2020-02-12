@@ -13,41 +13,46 @@ import { Router } from '@angular/router';
   styleUrls: ['./indexcard-list.component.css']
 })
 export class IndexcardListComponent implements OnInit, AfterViewInit {
-
-
   public displayedColumns = ['userId', 'id', 'title', 'completed', 'details', 'update', 'delete'];
   public dataSource = new MatTableDataSource<Indexcard>();
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private indexcardService: IndexcardService, private errorHandlerService: ErrorHandlerService, private router: Router) { }
+  constructor(
+    private indexcardService: IndexcardService,
+    private errorHandlerService: ErrorHandlerService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.getAllIndexcards();
   }
 
-    ngAfterViewInit(): void {
-      this.dataSource.sort = this.sort;
-      this.dataSource.paginator = this.paginator;
+  ngAfterViewInit(): void {
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
 
   public getAllIndexcards = () => {
     this.indexcardService.getIndexcards().subscribe(
-      res => { this.dataSource.data = res; },
-      error => { this.errorHandlerService.handleError(error); }
+      res => {
+        this.dataSource.data = res;
+      },
+      error => {
+        this.errorHandlerService.handleError(error);
+      }
     );
-  }
+  };
 
   public redirectToDetails = (id: string) => {
     const url = `indexcard/indexcards/${id}`;
     this.router.navigate([url]);
-  }
-  public redirectToUpdate = (id: string) => { };
-  public redirectToDelete = (id: string) => { };
+  };
+  public redirectToUpdate = (id: string) => {};
+  public redirectToDelete = (id: string) => {};
 
   public doFilter = (value: string) => {
     this.dataSource.filter = value.trim().toLowerCase();
-  }
-
+  };
 }

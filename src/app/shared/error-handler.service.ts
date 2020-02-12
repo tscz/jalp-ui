@@ -7,11 +7,9 @@ import { ERROR_COMPONENT_TYPE } from '@angular/compiler';
   providedIn: 'root'
 })
 export class ErrorHandlerService {
-
-
   public errorMessage = '';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   public handleError = (error: HttpErrorResponse) => {
     switch (error.status) {
@@ -24,20 +22,20 @@ export class ErrorHandlerService {
       default:
         this.handleOther(error);
     }
-  }
+  };
 
-  private  handle500 = (error: HttpErrorResponse) => {
+  private handle500 = (error: HttpErrorResponse) => {
     this.createErrorMessage(error);
     this.router.navigate(['/500']);
-  }
-  private  handle404 = (error: HttpErrorResponse) => {
+  };
+  private handle404 = (error: HttpErrorResponse) => {
     this.createErrorMessage(error);
     this.router.navigate(['/404']);
-  }
-  private  handleOther = (error: HttpErrorResponse) => {
+  };
+  private handleOther = (error: HttpErrorResponse) => {
     this.createErrorMessage(error);
     // TODO
-  }
+  };
 
   private createErrorMessage(error: HttpErrorResponse) {
     this.errorMessage = error.error ? error.error : error.statusText;

@@ -10,7 +10,6 @@ import { ErrorHandlerService } from 'src/app/shared/error-handler.service';
   styleUrls: ['./indexcard-details.component.css']
 })
 export class IndexcardDetailsComponent implements OnInit {
-
   public indexcard: Indexcard;
 
   constructor(
@@ -18,7 +17,7 @@ export class IndexcardDetailsComponent implements OnInit {
     private router: Router,
     private activeRoute: ActivatedRoute,
     private errorHandler: ErrorHandlerService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.getIndexcardDetails();
@@ -27,15 +26,18 @@ export class IndexcardDetailsComponent implements OnInit {
   public redirectToOverview = () => {
     const url = `/indexcard/indexcards`;
     this.router.navigate([url]);
-  }
+  };
 
   private getIndexcardDetails = () => {
     const id: string = this.activeRoute.snapshot.params.id;
 
     this.indexcardService.getIndexcard(id).subscribe(
-      res => { this.indexcard = res; },
-      error => { this.errorHandler.handleError(error); }
+      res => {
+        this.indexcard = res;
+      },
+      error => {
+        this.errorHandler.handleError(error);
+      }
     );
-  }
-
+  };
 }

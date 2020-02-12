@@ -34,4 +34,4 @@ const materialModules = [
   exports: materialModules,
   imports: materialModules
 })
-export class MaterialModule { }
+export class MaterialModule {}

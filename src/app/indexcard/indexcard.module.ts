@@ -6,15 +6,8 @@ import { MaterialModule } from '../material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { IndexcardDetailsComponent } from './indexcard-details/indexcard-details.component';
 
-
-
 @NgModule({
   declarations: [IndexcardListComponent, IndexcardDetailsComponent],
-  imports: [
-    CommonModule,
-    IndexcardRoutingModule,
-    MaterialModule,
-    FlexLayoutModule
-  ]
+  imports: [CommonModule, IndexcardRoutingModule, MaterialModule, FlexLayoutModule]
 })
-export class IndexcardModule { }
+export class IndexcardModule {}

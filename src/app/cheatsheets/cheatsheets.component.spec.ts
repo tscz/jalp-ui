@@ -8,9 +8,8 @@ describe('CheatsheetsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CheatsheetsComponent ]
-    })
-    .compileComponents();
+      declarations: [CheatsheetsComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

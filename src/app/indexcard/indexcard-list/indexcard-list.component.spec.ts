@@ -12,11 +12,9 @@ describe('IndexcardListComponent', () => {
   let fixture: ComponentFixture<IndexcardListComponent>;
   let indexcardServiceStub: Partial<IndexcardService>;
 
-
-
   beforeEach(async(() => {
     indexcardServiceStub = {
-        getIndexcards : () => {
+      getIndexcards: () => {
         return of([]);
       }
     };
@@ -24,9 +22,8 @@ describe('IndexcardListComponent', () => {
     TestBed.configureTestingModule({
       imports: [MaterialModule, BrowserAnimationsModule, RouterTestingModule],
       declarations: [IndexcardListComponent],
-      providers: [ {provide: IndexcardService, useValue: indexcardServiceStub}]
-    })
-      .compileComponents();
+      providers: [{ provide: IndexcardService, useValue: indexcardServiceStub }]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

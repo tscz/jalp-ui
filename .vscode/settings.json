@@ -1,4 +1,5 @@
 {
     "coverage-gutters.coverageReportFileName": "coverage/jalp-ui/index.html",
-    "coverage-gutters.lcovname": "coverage/jalp-ui/lcov.info"
+    "coverage-gutters.lcovname": "coverage/jalp-ui/lcov.info",
+    "editor.formatOnSave": true
 }

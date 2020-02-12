@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { IndexcardDetailsComponent } from './indexcard-details.component';
 import { IndexcardService } from 'src/app/shared/indexcard.service';
 import { of, throwError } from 'rxjs';
@@ -30,13 +29,9 @@ describe('IndexcardDetailsComponent', () => {
         { provide: IndexcardService, useValue: indexcardService },
         { provide: ErrorHandlerService, useValue: errorHandler },
         { provide: Router, useValue: router },
-        {
-          provide: ActivatedRoute,
-          useValue: { snapshot: { params: { id: '' + TEST_INDEXCARD.id } } }
-        }
+        { provide: ActivatedRoute, useValue: { snapshot: { params: { id: '' + TEST_INDEXCARD.id } } } }
       ]
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -63,7 +58,8 @@ describe('IndexcardDetailsComponent', () => {
   it('should report an error in case service api returns an error', () => {
     const error404 = new HttpErrorResponse({
       error: '404 error',
-      status: 404, statusText: 'Not Found'
+      status: 404,
+      statusText: 'Not Found'
     });
     indexcardService.getIndexcard.and.returnValue(throwError(error404));
 
@@ -82,5 +78,4 @@ describe('IndexcardDetailsComponent', () => {
     expect(router.navigate).toHaveBeenCalledTimes(1);
     expect(router.navigate).toHaveBeenCalledWith(['/indexcard/indexcards']);
   });
-
 });
