@@ -13,7 +13,8 @@
     "e2e:ci": "npm run e2e --silent -- --protractor-config=e2e/protractor-ci.conf.js",
     "update": "ng update",
     "deploy": "ng deploy",
-    "compodoc": "npx compodoc -p tsconfig.compodoc.json"
+    "doc": "npx compodoc --tsconfig tsconfig.compodoc.json --serve --watch",
+    "doc:ci": "npm run doc -- --coverageTest 100 --coverageMinimumPerFile 100"
   },
   "private": true,
   "dependencies": {

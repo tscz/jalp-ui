@@ -7,7 +7,6 @@ env:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -15,31 +14,34 @@ jobs:
         node-version: [12.x]
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: build
-      run: |
-        npm ci
-        npm install
-        npm run build
-    - name: lint
-      run: |
-        npm run lint
-    - name: run unit tests
-      run: |
-        npm run test:ci
-    - name: update code coverage report
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        path-to-lcov: "./coverage/jalp-ui/lcov.info"
-    - name: prepare e2e - install latest stable google chrome
-      run: |
-        sudo apt-get update
-        sudo apt-get install libsqlite3-dev chromium-driver google-chrome-stable
-    - name: run e2e tests
-      run: |
-        npm run e2e:ci
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: build
+        run: |
+          npm ci
+          npm install
+          npm run build
+      - name: lint
+        run: |
+          npm run lint
+      - name: run unit tests
+        run: |
+          npm run test:ci
+      - name: update code coverage report
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: './coverage/jalp-ui/lcov.info'
+      - name: prepare e2e - install latest stable google chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install libsqlite3-dev chromium-driver google-chrome-stable
+      - name: run e2e tests
+        run: |
+          npm run e2e:ci
+      - name: create automatic documentation
+        run: |
+          npm run doc:ci
