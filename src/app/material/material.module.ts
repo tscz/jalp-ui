@@ -29,6 +29,11 @@ const materialModules = [
   MatCardModule
 ];
 
+/**
+ * Module containing all ng material modules.
+ *
+ * (see {@link https://material.angular.io/components/categories})
+ */
 @NgModule({
   declarations: [],
   exports: materialModules,
