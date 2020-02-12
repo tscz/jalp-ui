@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1581451238595,
+  "timestamp": 1581547379634,
   "index": "https://tscz.github.io/jalp-ui/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "https://tscz.github.io/jalp-ui/favicon.ico",
         "https://tscz.github.io/jalp-ui/index.html",
-        "https://tscz.github.io/jalp-ui/main-es2015.e7f5c9abcbb904d2bdc6.js",
-        "https://tscz.github.io/jalp-ui/main-es5.e7f5c9abcbb904d2bdc6.js",
+        "https://tscz.github.io/jalp-ui/main-es2015.00401355ca2d50deb8ba.js",
+        "https://tscz.github.io/jalp-ui/main-es5.00401355ca2d50deb8ba.js",
         "https://tscz.github.io/jalp-ui/manifest.webmanifest",
         "https://tscz.github.io/jalp-ui/polyfills-es2015.ca64e4516afbb1b890d5.js",
         "https://tscz.github.io/jalp-ui/polyfills-es5.277e2e1d6fb2daf91a5c.js",
@@ -49,9 +49,9 @@
     "https://tscz.github.io/jalp-ui/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "https://tscz.github.io/jalp-ui/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://tscz.github.io/jalp-ui/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://tscz.github.io/jalp-ui/index.html": "75ea57ee5d54bc109264d626ca8436e2edb80f65",
-    "https://tscz.github.io/jalp-ui/main-es2015.e7f5c9abcbb904d2bdc6.js": "0ce46cdd853582d81b0870a4c3c3b9153528dc83",
-    "https://tscz.github.io/jalp-ui/main-es5.e7f5c9abcbb904d2bdc6.js": "fbc784ea974d5407ba3a5d30be0b8610a7b022a8",
+    "https://tscz.github.io/jalp-ui/index.html": "a976a2543e9bc20e328afc8065e2f7b7f226d109",
+    "https://tscz.github.io/jalp-ui/main-es2015.00401355ca2d50deb8ba.js": "b3527de13d3c98d849c288a0af04f88a4f8a677d",
+    "https://tscz.github.io/jalp-ui/main-es5.00401355ca2d50deb8ba.js": "047f7fe23683a43f4be41ac4b947c964d700afe5",
     "https://tscz.github.io/jalp-ui/manifest.webmanifest": "273e8e54fd7136e7ddd94b689f17d023cd6f82a9",
     "https://tscz.github.io/jalp-ui/polyfills-es2015.ca64e4516afbb1b890d5.js": "8779ed8d9bf0580e1b50b352a9b8fd520be24433",
     "https://tscz.github.io/jalp-ui/polyfills-es5.277e2e1d6fb2daf91a5c.js": "8d03638471d7374e81cf33adfdea439f84ac3873",
