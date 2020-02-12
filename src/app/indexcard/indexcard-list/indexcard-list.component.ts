@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
-import { Indexcard } from 'src/app/_interface/indexcard.model';
-import { IndexcardService } from 'src/app/shared/indexcard.service';
-import { MatSort } from '@angular/material/sort';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
-import { ErrorHandlerService } from 'src/app/shared/error-handler.service';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { Indexcard } from 'src/app/_interface/indexcard.model';
+import { ErrorHandlerService } from 'src/app/shared/error-handler.service';
+import { IndexcardService } from 'src/app/shared/indexcard.service';
 
 @Component({
   selector: 'app-indexcard-list',

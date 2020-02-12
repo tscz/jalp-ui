@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Indexcard } from 'src/app/_interface/indexcard.model';
-import { IndexcardService } from 'src/app/shared/indexcard.service';
-import { Router, ActivatedRoute } from '@angular/router';
 import { ErrorHandlerService } from 'src/app/shared/error-handler.service';
+import { IndexcardService } from 'src/app/shared/indexcard.service';
 
 @Component({
   selector: 'app-indexcard-details',

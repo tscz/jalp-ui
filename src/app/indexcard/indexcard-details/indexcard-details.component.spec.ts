@@ -1,11 +1,11 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { IndexcardDetailsComponent } from './indexcard-details.component';
-import { IndexcardService } from 'src/app/shared/indexcard.service';
+import { ActivatedRoute, convertToParamMap, Router } from '@angular/router';
 import { of, throwError } from 'rxjs';
 import { Indexcard } from 'src/app/_interface/indexcard.model';
-import { HttpErrorResponse } from '@angular/common/http';
 import { ErrorHandlerService } from 'src/app/shared/error-handler.service';
-import { Router, ActivatedRoute, convertToParamMap } from '@angular/router';
+import { IndexcardService } from 'src/app/shared/indexcard.service';
+import { IndexcardDetailsComponent } from './indexcard-details.component';
 
 describe('IndexcardDetailsComponent', () => {
   const TEST_INDEXCARD: Indexcard = { id: 1, userId: 1, completed: true, title: 'This is a test' };
