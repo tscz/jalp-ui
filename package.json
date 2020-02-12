@@ -13,10 +13,14 @@
     "e2e:ci": "npm run e2e --silent -- --protractor-config=e2e/protractor-ci.conf.js",
     "update": "ng update",
     "deploy": "ng deploy",
-    "doc": "npx compodoc --tsconfig tsconfig.compodoc.json --serve --watch",
+    "doc": "npx compodoc --tsconfig tsconfig.compodoc.json --config package.json --serve --watch",
     "doc:ci": "npm run doc -- --coverageTest 100 --coverageMinimumPerFile 100"
   },
   "private": true,
+  "compodoc": {
+    "disablePrivate": true,
+    "disableLifeCycleHooks": true
+  },
   "dependencies": {
     "@angular/animations": "9.0.0",
     "@angular/cdk": "9.0.0",

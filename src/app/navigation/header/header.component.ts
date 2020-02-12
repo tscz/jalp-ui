@@ -1,18 +1,17 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
+/** Header of the app. */
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
+  /** Sidenav toggle output property. */
   @Output()
-  public sidenavToggle = new EventEmitter();
+  private sidenavToggle = new EventEmitter();
 
-  constructor() {}
-
-  ngOnInit(): void {}
-
+  /** Emit an event in case sidenav toggle is triggered. */
   public onToggleSidenav = () => {
     this.sidenavToggle.emit();
   };

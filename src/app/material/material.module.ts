@@ -13,6 +13,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
+/** List of all exported material modules. */
 const materialModules = [
   MatButtonModule,
   MatIconModule,

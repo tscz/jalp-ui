@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * Homepage.
+ */
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
-  title = 'jalp-ui';
-
-  constructor() {}
-
-  ngOnInit(): void {}
+export class HomeComponent {
+  /** Title of the homepage. */
+  readonly title = 'jalp-ui';
 }
