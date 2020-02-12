@@ -15,7 +15,7 @@ import { IndexcardService } from 'src/app/shared/indexcard.service';
 })
 export class IndexcardListComponent implements OnInit, AfterViewInit {
   /** Columns to be displayed in the indexcard table. */
-  static readonly displayedColumns = ['userId', 'id', 'title', 'completed', 'details', 'update', 'delete'];
+  readonly displayedColumns = ['userId', 'id', 'title', 'completed', 'details', 'update', 'delete'];
 
   /** Datasource for the indexcard table. */
   public dataSource = new MatTableDataSource<Indexcard>();
